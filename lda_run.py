@@ -10,8 +10,11 @@ from pprint import pprint
 import numpy as np
 np.random.seed(2018)
 import nltk
-nltk.download('wordnet')
+
 import json
+
+if not nltk.find('corpora/wordnet'):
+    nltk.download('wordnet')
 
 #load saved dreams model 
 #dreams_model_file = datapath("lda_dreams_model")
