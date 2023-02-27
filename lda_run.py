@@ -13,7 +13,9 @@ import nltk
 
 import json
 
-if not nltk.find('corpora/wordnet'):
+try:
+    nltk.find('corpora')
+except:
     nltk.download('wordnet')
 
 #load saved dreams model 
@@ -52,3 +54,4 @@ def applyModel(model, dictionary, unseen):
 
 def lda_dreamModel(unseen):
     return applyModel(lda_dreams, dreams_dict, unseen)
+
