@@ -28,7 +28,9 @@ class System:
 app.include_router(router)
 
 origins = [
-    "jadesolabejide.dev/DreamJournal"
+    "https://jadesolabejide.dev",
+    "https://jade-bejide.github.io",
+    "http://localhost:8080"
 ]
 
 app.add_middleware(
