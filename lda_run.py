@@ -10,6 +10,7 @@ from pprint import pprint
 import numpy as np
 np.random.seed(2018)
 import nltk
+nltk.download('wordnet')
 import json
 
 #load saved dreams model 
