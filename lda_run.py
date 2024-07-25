@@ -44,7 +44,7 @@ def applyModel(model, dictionary, unseen):
             best_topic = [score, index]
 
     emotions_json = None
-    with open("emotions.json", mode="r") as file:
+    with open("models/emotions.json", mode="r") as file:
         contents = file.read()
         emotions_json = json.loads(contents)
 

@@ -1,6 +1,10 @@
 # DreamJournal-API
-Introducing DreamJournal-API, A Python REST-API built using FastAPI and hosting using fly.io. The sole endpoint (/entry) uses a Latent Dirichlet Allocation [1] trained model to infer the underlying emotion of a dream journal excerpt.
+Introducing DreamJournal-API, A Python REST-API built using FastAPI and hosting using fly.io. The sole endpoint (/entry) uses a Latent Dirichlet Allocation [1] trained model to infer the underlying emotion of a dream journal excerpt. The LDA model was trained using the [DreamBank](https://dreambank.net/) dataset.
 
+This API was created during the University of Bristol Computer Science's Society ArtHack (February, 2023).
+
+## Status
+Currently working on improving the inferred topics of a dream journal entry
 ## Features
 - **Stateless**: This API does not store dream journal excerpts and additionally works over HTTPS keeping your dream journal excerpts confidential
 

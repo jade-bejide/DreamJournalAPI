@@ -19,7 +19,7 @@ class System:
 
     @router.post("/entry", response_model=Interpretation)
     def postEntry(self, entry: JournalEntry):
-        print(entry.contents)
+        print("Log:",entry.contents)
         return {'topic': dreamModel.lda_dreamModel(entry.contents)}
 
     
