@@ -19,10 +19,8 @@ except:
     nltk.download('wordnet')
 
 #load saved dreams model 
-#dreams_model_file = datapath("lda_dreams_model")
-#dictionary_file = datapath("lda_dreams_dictionary")
-lda_dreams = models.ldamodel.LdaModel.load("lda_dreams_model")
-dreams_dict = corpora.Dictionary.load("lda_dreams_dictionary")
+lda_dreams = models.ldamodel.LdaModel.load("models/lda_dreams_model")
+dreams_dict = corpora.Dictionary.load("models/lda_dreams_dictionary")
 
 #Preprocessing by lemmatize and stemmin steps
 def lemmatize_stemming(text):

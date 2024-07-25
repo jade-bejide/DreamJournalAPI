@@ -33,7 +33,7 @@ processedEntry = documents['content'].map(preprocess)
 
 dictionary = gensim.corpora.Dictionary(processedEntry)
 
-dictionary.save("lda_dreams_dictionary")
+dictionary.save("models/lda_dreams_dictionary")
 
 #dictionary.filter_extremes(no_below=15, no_above=0.5, keep_n=100000)
 
@@ -55,8 +55,8 @@ if __name__ == '__main__':
                                                  id2word=dictionary, passes=2, workers=4)
 
     
-    lda_model.save("lda_dreams_model")
-    lda_model_tfidf.save("lda_dreams_model_tfidf")
+    lda_model.save("models/lda_dreams_model")
+    lda_model_tfidf.save("models/lda_dreams_model_tfidf")
     
     unseen_doc = "A swarm of bumble bees chased me through the corridors"
     bow_vector = dictionary.doc2bow(preprocess(unseen_doc))
@@ -70,7 +70,7 @@ if __name__ == '__main__':
     for entry in range(x):
         emotionMap[str(entry)] = [None, -float("inf")]
 
-    with open("emotions.txt", mode="r") as file:
+    with open("models/emotions.txt", mode="r") as file:
         for line in file:
             if '\n' in line: line = line.strip('\n')
             emotions.append(line)
@@ -93,7 +93,7 @@ if __name__ == '__main__':
 
     emotionJson = json.dumps(emotionMap, indent = 4)
 
-    with open("emotions.json", "w") as outfile:
+    with open("models/emotions.json", "w") as outfile:
         outfile.write(emotionJson)
 
     
